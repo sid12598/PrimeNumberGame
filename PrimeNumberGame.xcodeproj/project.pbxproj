@@ -14,6 +14,7 @@
 		721F23BC1F166F040055EBE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721F23BA1F166F040055EBE7 /* LaunchScreen.storyboard */; };
 		721F23C71F166F040055EBE7 /* PrimeNumberGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F23C61F166F040055EBE7 /* PrimeNumberGameTests.swift */; };
 		721F23D21F166F040055EBE7 /* PrimeNumberGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F23D11F166F040055EBE7 /* PrimeNumberGameUITests.swift */; };
+		721F23E01F1674FD0055EBE7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F23DF1F1674FD0055EBE7 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		721F23CD1F166F040055EBE7 /* PrimeNumberGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeNumberGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		721F23D11F166F040055EBE7 /* PrimeNumberGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeNumberGameUITests.swift; sourceTree = "<group>"; };
 		721F23D31F166F040055EBE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		721F23DF1F1674FD0055EBE7 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				721F23B11F166F040055EBE7 /* AppDelegate.swift */,
 				721F23B31F166F040055EBE7 /* ViewController.swift */,
+				721F23DF1F1674FD0055EBE7 /* Question.swift */,
 				721F23B51F166F040055EBE7 /* Main.storyboard */,
 				721F23B81F166F040055EBE7 /* Assets.xcassets */,
 				721F23BA1F166F040055EBE7 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721F23E01F1674FD0055EBE7 /* Question.swift in Sources */,
 				721F23B41F166F040055EBE7 /* ViewController.swift in Sources */,
 				721F23B21F166F040055EBE7 /* AppDelegate.swift in Sources */,
 			);

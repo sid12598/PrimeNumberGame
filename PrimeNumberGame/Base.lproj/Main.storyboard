@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ouY-yW-CGS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Prime Number Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PrimeNumberGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this number a prime number?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-eP-E3s">
+                                <rect key="frame" x="62.5" y="104" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SG9-GQ-kJd"/>
+                                    <constraint firstAttribute="width" constant="250" id="bgB-V1-MHx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uub-HW-4jB">
+                                <rect key="frame" x="137.5" y="184" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="97F-kX-4Fx"/>
+                                    <constraint firstAttribute="height" constant="100" id="O1B-1Q-LWu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRU-oR-ZXx">
+                                <rect key="frame" x="63" y="319" width="90" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="GMu-O1-wat"/>
+                                    <constraint firstAttribute="height" constant="42" id="WAW-uh-4ov"/>
+                                </constraints>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <action selector="trueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFM-Yq-qj6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILV-R9-nor">
+                                <rect key="frame" x="222" y="319" width="90" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6Zq-Wi-o1v"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="HZM-QK-Ygp"/>
+                                    <constraint firstAttribute="width" constant="90" id="HcJ-aq-TC8"/>
+                                    <constraint firstAttribute="height" constant="42" id="V5y-uH-OQH"/>
+                                </constraints>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="falseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2I-Rh-DG1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score is 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-nd-tKm">
+                                <rect key="frame" x="130" y="391" width="115" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="fN1-B3-VTo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fnC-eP-E3s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ahd-fg-1Be"/>
+                            <constraint firstItem="uub-HW-4jB" firstAttribute="top" secondItem="fnC-eP-E3s" secondAttribute="bottom" constant="40" id="Bjf-NU-LWB"/>
+                            <constraint firstItem="IRU-oR-ZXx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-79.5" id="GJF-FA-JYL"/>
+                            <constraint firstItem="tLz-nd-tKm" firstAttribute="centerX" secondItem="uub-HW-4jB" secondAttribute="centerX" id="HWl-xP-1CP"/>
+                            <constraint firstItem="tLz-nd-tKm" firstAttribute="top" secondItem="ILV-R9-nor" secondAttribute="bottom" constant="30" id="QCw-Dy-LU6"/>
+                            <constraint firstItem="IRU-oR-ZXx" firstAttribute="top" secondItem="uub-HW-4jB" secondAttribute="bottom" constant="35" id="Utz-pO-0rn"/>
+                            <constraint firstItem="fnC-eP-E3s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="rlA-Td-vrz"/>
+                            <constraint firstItem="ILV-R9-nor" firstAttribute="centerX" secondItem="fnC-eP-E3s" secondAttribute="centerX" constant="79.5" id="sqX-S1-66G"/>
+                            <constraint firstItem="ILV-R9-nor" firstAttribute="baseline" secondItem="IRU-oR-ZXx" secondAttribute="baseline" id="vJo-RW-gwb"/>
+                            <constraint firstItem="fnC-eP-E3s" firstAttribute="centerX" secondItem="uub-HW-4jB" secondAttribute="centerX" id="yX0-ZK-8CL"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Prime Number Game" id="Rd2-mE-ka4"/>
+                    <connections>
+                        <outlet property="falseButton" destination="ILV-R9-nor" id="J3O-WL-sHQ"/>
+                        <outlet property="questionNumber" destination="uub-HW-4jB" id="evz-jE-dcj"/>
+                        <outlet property="scoreLabel" destination="tLz-nd-tKm" id="460-fk-u8u"/>
+                        <outlet property="trueButton" destination="IRU-oR-ZXx" id="HaT-Ac-m0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D5b-jY-szw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ouY-yW-CGS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0b-YC-uQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4uj-hh-UVQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIY-gG-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="135.38230884557723"/>
         </scene>
     </scenes>
 </document>
