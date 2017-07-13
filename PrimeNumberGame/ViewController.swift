@@ -23,8 +23,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestion()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(setScoreToZero),
+            name: NSNotification.Name.UIApplicationWillResignActive,
+            object: nil)
         
-        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +52,7 @@ class ViewController: UIViewController {
         let question = Question()
         questionNumber.text = String(question.number)
         expected = question.answer()
+        questionNumber.textColor = .black
     }
     
     func checkAnswer(chosen: Bool?) {
@@ -57,11 +66,16 @@ class ViewController: UIViewController {
             questionNumber.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         }
         scoreLabel.text = "Your Score is: \(score)"
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.loadQuestion()
             self.trueButton.isEnabled = true
             self.falseButton.isEnabled = true
         })
+    }
+    
+    func setScoreToZero () {
+        score = 0
+        scoreLabel.text = "Your Score is: \(score)"
     }
 }
 
